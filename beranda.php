@@ -1,7 +1,7 @@
 <?php
 session_start();
-$username = isset($_SESSION['username_danur']) ? $_SESSION['username_danur'] : "Guest";
-$role = isset($_SESSION['level_danur']) ? $_SESSION['level_danur'] : "";
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+$role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
 ?>
 
 <!DOCTYPE html>
@@ -136,11 +136,11 @@ $role = isset($_SESSION['level_danur']) ? $_SESSION['level_danur'] : "";
             <i class="fas fa-chart-bar"></i>
             <span>Keuangan</span>
         </a>
-        <a href="#" class="menu-card">
+        <a href="data karyawan/tampil_user.php" class="menu-card">
             <i class="fas fa-id-badge"></i>
             <span>Data Staff Gudang</span>
         </a>
-        <a href="#" class="menu-card">
+        <a href="riwayat_login.php" class="menu-card">
             <i class="fas fa-history"></i>
             <span>History Login</span>
         </a>

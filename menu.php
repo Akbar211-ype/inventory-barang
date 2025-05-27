@@ -4,7 +4,7 @@
 // Check if user is logged in and check their role
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username']; // Username from session
-    $role = $_SESSION['level_danur']; // User role (admin or user)
+    $role = $_SESSION['level']; // User role (admin or user)
 } else {
     $username = "Guest"; // Display "Guest" if not logged in
     $role = ""; // No role if not logged in
