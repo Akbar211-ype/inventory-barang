@@ -1,7 +1,7 @@
 <?php
 session_start();
-$username = isset($_SESSION['username_danur']) ? $_SESSION['username_danur'] : "Guest";
-$role = isset($_SESSION['level_danur']) ? $_SESSION['level_danur'] : "";
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+$role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
 ?>
 
 <!DOCTYPE html>
