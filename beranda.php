@@ -112,7 +112,7 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
 
     <!-- Menu Grid -->
     <div class="menu-grid">
-        <a href="#" class="menu-card">
+        <a href="data produk/barang_masuk.php" class="menu-card">
             <i class="fas fa-shopping-bag"></i>
             <span>Barang Masuk</span>
         </a>

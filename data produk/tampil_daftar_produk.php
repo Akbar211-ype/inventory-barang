@@ -167,7 +167,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password_karyawan'])) {
                     </tbody>
                 </table>
             </div>
-            <a href="beranda.php" class="btn btn-kuning mt-3">Kembali</a>
+            <a href="../beranda.php" class="btn btn-kuning mt-3">Kembali</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -20,13 +20,13 @@ if ($cek > 0) { // Menggunakan $cek > 0 lebih eksplisit untuk keberhasilan login
     $_SESSION['nama_lengkap'] = $data['nama_lengkap'];
     $_SESSION['level'] = $data['level']; // Menyimpan level (admin atau user)
 
-    // --- Catat Riwayat Login ke tb_log_login_danur ---
+    // --- Catat Riwayat Login ke tb_log_login ---
     $no_karyawan_logged = $data['no_karyawan']; // Menggunakan 'no_karyawan' sebagai ID user
     $username_logged = $data['username'];
     $ip_address = $_SERVER['REMOTE_ADDR']; // Mengambil IP Address client
     $browser_agent = $_SERVER['HTTP_USER_AGENT']; // Mengambil User Agent (informasi browser/OS)
 
-    $insert_log_query = "INSERT INTO tb_log_login_danur (no_karyawan, username, ip_address, browser_agent, status)
+    $insert_log_query = "INSERT INTO tb_log_login (no_karyawan, username, ip_address, browser_agent, status)
                          VALUES ('$no_karyawan_logged', '$username_logged', '$ip_address', '$browser_agent', 'success')";
 
     $insert_log = mysqli_query($koneksi, $insert_log_query);
