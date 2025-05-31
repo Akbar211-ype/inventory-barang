@@ -37,7 +37,7 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
         }
 
         .profile-box {
-            background-color: white;
+            background-color: black ;
             border-radius: 10px;
             padding: 15px;
             display: flex;
@@ -116,25 +116,17 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
             <i class="fas fa-shopping-bag"></i>
             <span>Barang Masuk</span>
         </a>
-        <a href="#" class="menu-card">
+        <a href="data produk/barang_keluar.php" class="menu-card">
             <i class="fas fa-shopping-bag fa-flip-horizontal"></i>
             <span>Barang Keluar</span>
         </a>
         <a href="#" class="menu-card">
-            <i class="fas fa-bookmark"></i>
-            <span>Barang Expired</span>
-        </a>
-        <a href="#" class="menu-card">
             <i class="fas fa-chart-line"></i>
-            <span>Data Penjualan</span>
+            <span>Statistik Transit Barang</span>
         </a>
         <a href="data produk/tampil_daftar_produk.php" class="menu-card">
             <i class="fas fa-box"></i>
             <span>Daftar Barang</span>
-        </a>
-        <a href="#" class="menu-card">
-            <i class="fas fa-chart-bar"></i>
-            <span>Keuangan</span>
         </a>
         <a href="data karyawan/tampil_user.php" class="menu-card">
             <i class="fas fa-id-badge"></i>
