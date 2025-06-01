@@ -103,7 +103,7 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
                     <small>No. Admin: 123456789</small>
                 </div>
             </div>
-            <a class="logout-btn" href="../logout.php" onclick="return confirm('Yakin ingin logout?')">Logout</a>
+            <a class="logout-btn" href="logout.php" onclick="return confirm('Yakin ingin logout?')">Logout</a>
         </div>
     </div>
 
@@ -120,7 +120,7 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
             <i class="fas fa-shopping-bag fa-flip-horizontal"></i>
             <span>Barang Keluar</span>
         </a>
-        <a href="#" class="menu-card">
+        <a href="data produk/statistik_transit_barang.php" class="menu-card">
             <i class="fas fa-chart-line"></i>
             <span>Statistik Transit Barang</span>
         </a>

@@ -17,7 +17,7 @@ if (isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobilKu Dashboard</title>
+    <title>Gudangku Dashboard</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -69,10 +69,10 @@ if (isset($_SESSION['username'])) {
 
                     <!-- Logout Button -->
                     <a class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin keluar?')"
-                        href="../logout.php">Logout</a>
+                        href="logout.php">Logout</a>
             </div>
         </div>
-    </nav>
+    </nav>  
 
     <!-- Content for Tampil Mobil Page -->
     <div class="container mt-4">
