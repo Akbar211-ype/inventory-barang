@@ -2,6 +2,41 @@
 session_start();
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
 $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
+$noAdminKaryawan = "";
+
+// Koneksi ke database
+$servername = "localhost"; // Ganti dengan server Anda
+$usernameDB = "root"; // Ganti dengan username database Anda
+$passwordDB = ""; // Ganti dengan password database Anda
+$dbname = "web_inventory"; // Ganti dengan nama database Anda
+
+$conn = new mysqli($servername, $usernameDB, $passwordDB, $dbname);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Ambil nomor admin atau nomor karyawan dari database
+if ($username !== "Guest") {
+    $sql = "SELECT no_karyawan FROM tb_karyawan WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($noKaryawan);
+    $stmt->fetch();
+    
+    // Sesuaikan nomor yang ditampilkan
+    if ($role == 'Admin') {
+        // If Admin, display a fixed identifier or modify as per your logic
+        $noAdminKaryawan = 'Admin User'; // Adjust as needed
+    } else {
+        $noAdminKaryawan = $noKaryawan;
+    }
+    $stmt->close();
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +72,7 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
         }
 
         .profile-box {
-            background-color: black ;
+            background-color: black;
             border-radius: 10px;
             padding: 15px;
             display: flex;
@@ -99,8 +134,8 @@ $role = isset($_SESSION['level']) ? $_SESSION['level'] : "";
                 <i class="fas fa-user-circle fa-2x"></i>
                 <div>
                     <strong><?= $username ?></strong><br>
-                    <small><?= $role == 'Admin' ? '★ ADMIN' : 'User' ?></small><br>
-                    <small>No. Admin: 123456789</small>
+                    <small><?= $role == 'Admin' ? '★ ADMIN' : 'User ' ?></small><br>
+                    <small>No. <?= $role == 'Admin' ? 'Admin' : 'Karyawan' ?>: <?= $noAdminKaryawan ?></small>
                 </div>
             </div>
             <a class="logout-btn" href="logout.php" onclick="return confirm('Yakin ingin logout?')">Logout</a>
