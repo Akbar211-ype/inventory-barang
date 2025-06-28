@@ -72,11 +72,11 @@ if (isset($_SESSION['username'])) {
                         href="logout.php">Logout</a>
             </div>
         </div>
-    </nav>  
+    </nav>
 
-    <!-- Content for Tampil Mobil Page -->
+
     <div class="container mt-4">
-        <!-- Your Tampil Mobil page content goes here -->
+
     </div>
 
     <!-- Bootstrap JS and Popper.js CDN -->

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2025 at 07:04 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 25 Jun 2025 pada 03.52
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_daftar_produk`
+-- Struktur dari tabel `tb_barang_keluar`
+--
+
+CREATE TABLE `tb_barang_keluar` (
+  `id_keluar` int(11) NOT NULL,
+  `id_produk` varchar(50) DEFAULT NULL,
+  `jumlah_keluar` int(11) DEFAULT NULL,
+  `tanggal_keluar` date DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_daftar_produk`
 --
 
 CREATE TABLE `tb_daftar_produk` (
@@ -39,7 +53,7 @@ CREATE TABLE `tb_daftar_produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_daftar_produk`
+-- Dumping data untuk tabel `tb_daftar_produk`
 --
 
 INSERT INTO `tb_daftar_produk` (`id_produk`, `nama_produk`, `jenis_produk`, `perusahaan_produk`, `jenis_satuan`, `banyak_produk`, `tanggal_masuk`, `tanggal_keluar`) VALUES
@@ -50,7 +64,7 @@ INSERT INTO `tb_daftar_produk` (`id_produk`, `nama_produk`, `jenis_produk`, `per
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_karyawan`
+-- Struktur dari tabel `tb_karyawan`
 --
 
 CREATE TABLE `tb_karyawan` (
@@ -62,7 +76,7 @@ CREATE TABLE `tb_karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_karyawan`
+-- Dumping data untuk tabel `tb_karyawan`
 --
 
 INSERT INTO `tb_karyawan` (`no_karyawan`, `username`, `password_karyawan`, `nama_lengkap`, `level`) VALUES
@@ -75,7 +89,7 @@ INSERT INTO `tb_karyawan` (`no_karyawan`, `username`, `password_karyawan`, `nama
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_log_login`
+-- Struktur dari tabel `tb_log_login`
 --
 
 CREATE TABLE `tb_log_login` (
@@ -89,7 +103,7 @@ CREATE TABLE `tb_log_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_log_login`
+-- Dumping data untuk tabel `tb_log_login`
 --
 
 INSERT INTO `tb_log_login` (`id_log`, `no_karyawan`, `username`, `waktu_login`, `ip_address`, `browser_agent`, `status`) VALUES
@@ -98,12 +112,13 @@ INSERT INTO `tb_log_login` (`id_log`, `no_karyawan`, `username`, `waktu_login`, 
 (3, '100', 'alec', '2025-05-31 16:48:37', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'success'),
 (4, '2', 'akbar', '2025-05-31 16:49:11', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'success'),
 (5, '2', 'akbar', '2025-06-01 13:02:22', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'success'),
-(6, '2', 'akbar', '2025-06-14 16:18:34', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'success');
+(6, '2', 'akbar', '2025-06-14 16:18:34', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'success'),
+(7, '2', 'akbar', '2025-06-25 01:34:24', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0', 'success');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pelanggan_danur`
+-- Struktur dari tabel `tb_pelanggan_danur`
 --
 
 CREATE TABLE `tb_pelanggan_danur` (
@@ -114,7 +129,7 @@ CREATE TABLE `tb_pelanggan_danur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_pelanggan_danur`
+-- Dumping data untuk tabel `tb_pelanggan_danur`
 --
 
 INSERT INTO `tb_pelanggan_danur` (`nik_ktp_danur`, `nama_pelanggan_danur`, `no_hp_danur`, `alamat_danur`) VALUES
@@ -125,7 +140,7 @@ INSERT INTO `tb_pelanggan_danur` (`nik_ktp_danur`, `nama_pelanggan_danur`, `no_h
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_rental_danur`
+-- Struktur dari tabel `tb_rental_danur`
 --
 
 CREATE TABLE `tb_rental_danur` (
@@ -141,7 +156,7 @@ CREATE TABLE `tb_rental_danur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_rental_danur`
+-- Dumping data untuk tabel `tb_rental_danur`
 --
 
 INSERT INTO `tb_rental_danur` (`no_trx_danur`, `nama_pelanggan_danur`, `nik_ktp_danur`, `no_plat_danur`, `tgl_rental_danur`, `jam_rental_danur`, `harga_danur`, `lama_danur`, `total_bayar_danur`) VALUES
@@ -157,44 +172,56 @@ INSERT INTO `tb_rental_danur` (`no_trx_danur`, `nama_pelanggan_danur`, `nik_ktp_
 --
 
 --
--- Indexes for table `tb_daftar_produk`
+-- Indeks untuk tabel `tb_barang_keluar`
+--
+ALTER TABLE `tb_barang_keluar`
+  ADD PRIMARY KEY (`id_keluar`);
+
+--
+-- Indeks untuk tabel `tb_daftar_produk`
 --
 ALTER TABLE `tb_daftar_produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indexes for table `tb_karyawan`
+-- Indeks untuk tabel `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
   ADD PRIMARY KEY (`no_karyawan`);
 
 --
--- Indexes for table `tb_log_login`
+-- Indeks untuk tabel `tb_log_login`
 --
 ALTER TABLE `tb_log_login`
   ADD PRIMARY KEY (`id_log`);
 
 --
--- Indexes for table `tb_pelanggan_danur`
+-- Indeks untuk tabel `tb_pelanggan_danur`
 --
 ALTER TABLE `tb_pelanggan_danur`
   ADD PRIMARY KEY (`nik_ktp_danur`);
 
 --
--- Indexes for table `tb_rental_danur`
+-- Indeks untuk tabel `tb_rental_danur`
 --
 ALTER TABLE `tb_rental_danur`
   ADD PRIMARY KEY (`no_trx_danur`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_log_login`
+-- AUTO_INCREMENT untuk tabel `tb_barang_keluar`
+--
+ALTER TABLE `tb_barang_keluar`
+  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_log_login`
 --
 ALTER TABLE `tb_log_login`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
