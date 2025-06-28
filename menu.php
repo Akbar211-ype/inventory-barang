@@ -74,9 +74,9 @@ if (isset($_SESSION['username'])) {
         </div>
     </nav>
 
-
+    <!-- Content for Tampil Mobil Page -->
     <div class="container mt-4">
-
+        <!-- Your Tampil Mobil page content goes here -->
     </div>
 
     <!-- Bootstrap JS and Popper.js CDN -->
